@@ -7,18 +7,17 @@ function ConfettiEffect({ active, triggerKey }) {
       return undefined;
     }
 
-    const duration = 1800;
+    const duration = 900;
     const end = Date.now() + duration;
 
     const frame = () => {
       confetti({
-        particleCount: 30,
-        startVelocity: 30,
+        particleCount: 34,
+        startVelocity: 24,
         spread: 360,
-        origin: {
-          x: Math.random(),
-          y: Math.random() * 0.5,
-        },
+        origin: { x: Math.random(), y: Math.random() * 0.45 },
+        colors: ['#ff6b6b', '#ffd93d', '#7ae582', '#63c7ff', '#c084fc', '#ff9f1c'],
+        scalar: 1.1,
       });
 
       if (Date.now() < end) {
@@ -27,8 +26,7 @@ function ConfettiEffect({ active, triggerKey }) {
     };
 
     frame();
-
-    return () => undefined;
+    return undefined;
   }, [active, triggerKey]);
 
   return null;

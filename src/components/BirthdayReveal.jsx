@@ -7,9 +7,9 @@ function BirthdayReveal({ onCelebrate, isOpen }) {
   return (
     <motion.div
       className="reveal-wrap"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.45 }}
     >
       <div className="section-tag">Birthday Moment</div>
       <h2 className="main-title reveal-title">{birthdayConfig.revealTitle}</h2>

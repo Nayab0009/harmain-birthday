@@ -10,40 +10,45 @@ import ConfettiEffect from './components/ConfettiEffect';
 
 function App() {
   const [giftOpened, setGiftOpened] = useState(false);
-  const [confettiKey, setConfettiKey] = useState(0);
+  const [celebrateConfettiKey, setCelebrateConfettiKey] = useState(0);
+  const [celebrateBurstActive, setCelebrateBurstActive] = useState(false);
 
   const openGift = () => {
     setGiftOpened(true);
-    setConfettiKey((value) => value + 1);
 
     setTimeout(() => {
       document.getElementById('birthday-reveal')?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
-    }, 400);
+    }, 220);
   };
 
   const celebrate = () => {
-    setConfettiKey((value) => value + 1);
+    setCelebrateConfettiKey((value) => value + 1);
+    setCelebrateBurstActive(true);
+
+    setTimeout(() => {
+      setCelebrateBurstActive(false);
+    }, 900);
+
     setTimeout(() => {
       document.getElementById('fun-zone')?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
-    }, 300);
+    }, 100);
   };
 
   const replay = () => {
     setGiftOpened(false);
-    setConfettiKey((value) => value + 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="app-shell">
       <MusicPlayer />
-      <ConfettiEffect active={giftOpened} triggerKey={confettiKey} />
+      <ConfettiEffect active={celebrateBurstActive} triggerKey={celebrateConfettiKey} />
 
       <WelcomeScreen onOpenGift={openGift} isOpened={giftOpened} />
 
