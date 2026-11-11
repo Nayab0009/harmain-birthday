@@ -1,0 +1,31 @@
+{
+  "name": "hbd",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "keywords": [
+    "birthday",
+    "react",
+    "vite",
+    "surprise"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Birthday surprise website for Harmain Ghani",
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "framer-motion": "^14.12.0",
+    "lucide-react": "^1.72.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "^8.3.8"
+  }
+}
